@@ -1,15 +1,15 @@
 {
     "meta": {
         "version": "3.5.0",
-        "report_json_url": "https://raw.githubusercontent.com/eosc-synergy/download_TABOO_waveforms.assess.sqaaas/1.1.0/.report/assessment_output.json",
-        "report_permalink": "https://sqaaas.eosc-synergy.eu/full-assessment/report/https://raw.githubusercontent.com/eosc-synergy/download_TABOO_waveforms.assess.sqaaas/1.1.0/.report/assessment_output.json",
-        "timestamp": 1755095390.2785316
+        "report_json_url": "https://raw.githubusercontent.com/eosc-synergy/download_TABOO_waveforms.assess.sqaaas/main/.report/assessment_output.json",
+        "report_permalink": "https://sqaaas.eosc-synergy.eu/full-assessment/report/https://raw.githubusercontent.com/eosc-synergy/download_TABOO_waveforms.assess.sqaaas/main/.report/assessment_output.json",
+        "timestamp": 1760010153.4240112
     },
     "repository": [
         {
             "url": "https://github.com/marcmath/download_TABOO_waveforms",
             "name": "marcmath/download_TABOO_waveforms",
-            "tag": "1.1.0",
+            "tag": "main",
             "commit_id": "4b6737ea823c7fc815aa957f77fb2c5e23de1547",
             "is_main_repo": true,
             "avatar_url": "https://avatars.githubusercontent.com/u/86710798?v=4",
@@ -49,12 +49,12 @@
                                 },
                                 "ci": {
                                     "name": "QC.Acc github.com/marcmath/download_TABOO_waveforms git",
-                                    "status": "FAILED",
+                                    "status": "SUCCESS",
                                     "stdout_command": [
                                         "git rev-parse --is-inside-work-tree "
                                     ],
-                                    "stdout_text": ".sqa/script.shabby-asparagus-oyster.sh: 7: cd: can't cd to github.com/marcmath/download_TABOO_waveforms/DTC74/WF7403/ST740304/src",
-                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/download_TABOO_waveforms.assess.sqaaas/job/1.1.0/1/execution/node/34/log?consoleFull"
+                                    "stdout_text": "true",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/download_TABOO_waveforms.assess.sqaaas/job/main/1/execution/node/34/log?consoleFull"
                                 },
                                 "level": "REQUIRED",
                                 "build_repo": "https://github.com/eosc-synergy/download_TABOO_waveforms.assess.sqaaas"
@@ -79,6 +79,161 @@
         "QC.Doc": {
             "valid": false,
             "subcriteria": {
+                "QC.Doc06.1": {
+                    "description": "Is the software scope outlined in the code repository?",
+                    "requirement_level": "MUST",
+                    "hint": "A README file presents your software to the audience interested in your software project. Several online sites simplify the task of creating the README file, such as <a href=\"https://www.makeareadme.com/\" target=\"_blank\">Make a README</a> or <a href=\"https://readme.so/\" target=\"_blank\">readme.so</a> sites. Be sure to add it to the code repository's root path",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "A README file is present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc github.com/marcmath/download_TABOO_waveforms find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 2386}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": []}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/download_TABOO_waveforms.assess.sqaaas/job/main/1/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/download_TABOO_waveforms.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 2386
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": []
+                            }
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Doc06.3": {
+                    "description": "Does the project establish a code of conduct for its participants?",
+                    "requirement_level": "MUST",
+                    "hint": "A CODE_OF_CONDUCT file sets the path for a constructive, respectful and positive atmosphere among all the contributors in your software project. Of course you can define your own, but in case you want to rely on external and widely-adopted code of conducts check out some of the most popular ones: <a href=\"https://contributor-covenant.org/\" target=\"_blank\">Contributor Covenant</a> or <a href=\"https://web.archive.org/web/20200330154000/http://citizencodeofconduct.org/\" target=\"_blank\">Citizen Code of Conduct</a>",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "A CODE_OF_CONDUCT file is not present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc github.com/marcmath/download_TABOO_waveforms find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 2386}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": []}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/download_TABOO_waveforms.assess.sqaaas/job/main/1/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/download_TABOO_waveforms.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 2386
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": []
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": true
+                },
+                "QC.Doc06.2": {
+                    "description": "Is there a clear path or guidelines on how to contribute to the code?",
+                    "requirement_level": "MUST",
+                    "hint": "A CONTRIBUTING file shall be present in the root path of the code repository describing the expected workflow to follow when adding contributions. Please check <a href=\"https://mozillascience.github.io/working-open-workshop/contributing/\" target=\"_blank\">Mozilla's guidelines</a> and <a href=\"https://github.com/github/docs/blob/main/CONTRIBUTING.md\" target=\"_blank\">GitHub's CONTRIBUTING.md example</a> to get inspired on how to write a good CONTRIBUTING file",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "A CONTRIBUTING file is not present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc github.com/marcmath/download_TABOO_waveforms find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 2386}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": []}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/download_TABOO_waveforms.assess.sqaaas/job/main/1/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/download_TABOO_waveforms.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 2386
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": []
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": true
+                },
                 "QC.Doc01.1": {
                     "description": "Are docs managed in the same repository as code?",
                     "requirement_level": "MAY",
@@ -98,12 +253,12 @@
                                 "docker": null,
                                 "ci": {
                                     "name": "QC.Doc github.com/marcmath/download_TABOO_waveforms git",
-                                    "status": "FAILED",
+                                    "status": "SUCCESS",
                                     "stdout_command": [
                                         "git rev-parse --is-inside-work-tree "
                                     ],
-                                    "stdout_text": ".sqa/script.baggy-mustard-coati.sh: 7: cd: can't cd to github.com/marcmath/download_TABOO_waveforms/DTC74/WF7403/ST740304/src",
-                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/download_TABOO_waveforms.assess.sqaaas/job/1.1.0/1/execution/node/52/log?consoleFull"
+                                    "stdout_text": "true",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/download_TABOO_waveforms.assess.sqaaas/job/main/1/execution/node/52/log?consoleFull"
                                 },
                                 "level": "REQUIRED",
                                 "build_repo": "https://github.com/eosc-synergy/download_TABOO_waveforms.assess.sqaaas"
@@ -124,8 +279,8 @@
                     "hint": "When using a docs-as-code approach, the style of the markup language is being checked. SQAaaS relies on <a href=\"https://github.com/markdownlint/markdownlint/\" target=\"_blank\">markdownlint</a> for Markdown files and <a href=\"https://github.com/twolfson/restructuredtext-lint/\" target=\"_blank\">restructuredtext-lint</a> for reStructuredText",
                     "evidence": [
                         {
-                            "valid": true,
-                            "message": "Docs are compliant with markdownlint standard",
+                            "valid": false,
+                            "message": "Docs are not fully compliant with markdownlint standard",
                             "plugin": {
                                 "name": "report2sqaaas-plugin-markdownlint",
                                 "version": "2.1.0"
@@ -144,8 +299,8 @@
                                     "stdout_command": [
                                         "mdl --json  ."
                                     ],
-                                    "stdout_text": ".sqa/script.muggy-razzmatazz-gibbon.sh: cd: line 7: can't cd to github.com/marcmath/download_TABOO_waveforms/DTC74/WF7403/ST740304/src: No such file or directory",
-                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/download_TABOO_waveforms.assess.sqaaas/job/1.1.0/1/execution/node/61/log?consoleFull"
+                                    "stdout_text": "[{\"filename\":\"./README.md\",\"line\":27,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":39,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":43,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":2,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":9,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":13,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":39,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":41,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":43,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":59,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":1,\"rule\":\"MD022\",\"aliases\":[\"blanks-around-headers\"],\"description\":\"Headers should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md022---headers-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":4,\"rule\":\"MD025\",\"aliases\":[\"single-h1\"],\"description\":\"Multiple top level headers in the same document\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md025---multiple-top-level-headers-in-the-same-document\"},{\"filename\":\"./README.md\",\"line\":14,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":21,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":28,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":48,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":50,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":52,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":54,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":56,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":58,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":7,\"rule\":\"MD032\",\"aliases\":[\"blanks-around-lists\"],\"description\":\"Lists should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md032---lists-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":41,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":35,\"rule\":\"MD034\",\"aliases\":[\"no-bare-urls\"],\"description\":\"Bare URL used\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md034---bare-url-used\"}]",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/download_TABOO_waveforms.assess.sqaaas/job/main/1/execution/node/61/log?consoleFull"
                                 },
                                 "level": "RECOMMENDED",
                                 "build_repo": "https://github.com/eosc-synergy/download_TABOO_waveforms.assess.sqaaas"
@@ -155,20 +310,272 @@
                                 "version": "v4.0",
                                 "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
                             },
-                            "data_unstructured": {}
+                            "data_unstructured": {
+                                "./README.md": {
+                                    "MD009": {
+                                        "description": "Trailing spaces",
+                                        "line": [
+                                            27,
+                                            39,
+                                            43
+                                        ]
+                                    },
+                                    "MD013": {
+                                        "description": "Line length",
+                                        "line": [
+                                            2,
+                                            9,
+                                            13,
+                                            39,
+                                            41,
+                                            43,
+                                            59
+                                        ]
+                                    },
+                                    "MD022": {
+                                        "description": "Headers should be surrounded by blank lines",
+                                        "line": [
+                                            1
+                                        ]
+                                    },
+                                    "MD025": {
+                                        "description": "Multiple top level headers in the same document",
+                                        "line": [
+                                            4
+                                        ]
+                                    },
+                                    "MD031": {
+                                        "description": "Fenced code blocks should be surrounded by blank lines",
+                                        "line": [
+                                            14,
+                                            21,
+                                            28,
+                                            48,
+                                            50,
+                                            52,
+                                            54,
+                                            56,
+                                            58
+                                        ]
+                                    },
+                                    "MD032": {
+                                        "description": "Lists should be surrounded by blank lines",
+                                        "line": [
+                                            7
+                                        ]
+                                    },
+                                    "MD033": {
+                                        "description": "Inline HTML",
+                                        "line": [
+                                            41
+                                        ]
+                                    },
+                                    "MD034": {
+                                        "description": "Bare URL used",
+                                        "line": [
+                                            35
+                                        ]
+                                    }
+                                }
+                            }
                         }
                     ],
-                    "valid": true
+                    "valid": false,
+                    "required_for_next_level_badge": false
                 }
             },
             "coverage": {
-                "percentage": 100,
-                "total_subcriteria": 2,
+                "percentage": 40,
+                "total_subcriteria": 5,
                 "success_subcriteria": 2
             }
         },
+        "QC.Lic": {
+            "valid": false,
+            "subcriteria": {},
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 0,
+                "success_subcriteria": 0
+            }
+        },
+        "QC.Sec": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Sec02": {
+                    "description": "Is the source code passing Static Analysis Security Testing (SAST)?",
+                    "requirement_level": "MUST",
+                    "hint": "Please check & solve the security weaknesses found by the SAST tool",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Found security weaknesses when performing SAST checks with bandit tool",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-bandit",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "bandit",
+                                "lang": "Python",
+                                "version": "1.7.4",
+                                "docker": {
+                                    "dockerfile": "QC.Sec/bandit/Dockerfile",
+                                    "reviewed": "2022-03-04"
+                                },
+                                "ci": {
+                                    "name": "QC.Sec github.com/marcmath/download_TABOO_waveforms bandit",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "bandit -f json --quiet  --confidence-level high --severity-level high --recursive  ."
+                                    ],
+                                    "stdout_text": "{\n  \"errors\": [],\n  \"generated_at\": \"2025-10-09T11:40:49Z\",\n  \"metrics\": {\n    \"./detect_event.py\": {\n      \"CONFIDENCE.HIGH\": 4,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 4,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 46,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./download_TABOO_waveforms.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 54,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 4,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 4,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 100,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": [\n    {\n      \"code\": \"88 # delete folder content to only compare waveforms from the current earthquake\\n89 os.system(f\\\"rm -f TABOO_waveforms/*.mseed\\\")\\n90 os.system(f\\\"rm -f TABOO_waveforms/*.xml\\\")\\n\",\n      \"col_offset\": 0,\n      \"filename\": \"./detect_event.py\",\n      \"issue_confidence\": \"HIGH\",\n      \"issue_cwe\": {\n        \"id\": 78,\n        \"link\": \"https://cwe.mitre.org/data/definitions/78.html\"\n      },\n      \"issue_severity\": \"HIGH\",\n      \"issue_text\": \"Starting a process with a shell, possible injection detected, security issue.\",\n      \"line_number\": 89,\n      \"line_range\": [\n        89\n      ],\n      \"more_info\": \"https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html\",\n      \"test_id\": \"B605\",\n      \"test_name\": \"start_process_with_a_shell\"\n    },\n    {\n      \"code\": \"89 os.system(f\\\"rm -f TABOO_waveforms/*.mseed\\\")\\n90 os.system(f\\\"rm -f TABOO_waveforms/*.xml\\\")\\n91 # call download_TABOO_waveforms.py with eq_time, output_folder and duration\\n\",\n      \"col_offset\": 0,\n      \"filename\": \"./detect_event.py\",\n      \"issue_confidence\": \"HIGH\",\n      \"issue_cwe\": {\n        \"id\": 78,\n        \"link\": \"https://cwe.mitre.org/data/definitions/78.html\"\n      },\n      \"issue_severity\": \"HIGH\",\n      \"issue_text\": \"Starting a process with a shell, possible injection detected, security issue.\",\n      \"line_number\": 90,\n      \"line_range\": [\n        90\n      ],\n      \"more_info\": \"https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html\",\n      \"test_id\": \"B605\",\n      \"test_name\": \"start_process_with_a_shell\"\n    },\n    {\n      \"code\": \"91 # call download_TABOO_waveforms.py with eq_time, output_folder and duration\\n92 os.system(f\\\"python3 download_TABOO_waveforms.py {eq_time} TABOO_waveforms 60 \\\")\\n93 \\n\",\n      \"col_offset\": 0,\n      \"filename\": \"./detect_event.py\",\n      \"issue_confidence\": \"HIGH\",\n      \"issue_cwe\": {\n        \"id\": 78,\n        \"link\": \"https://cwe.mitre.org/data/definitions/78.html\"\n      },\n      \"issue_severity\": \"HIGH\",\n      \"issue_text\": \"Starting a process with a shell, possible injection detected, security issue.\",\n      \"line_number\": 92,\n      \"line_range\": [\n        92\n      ],\n      \"more_info\": \"https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html\",\n      \"test_id\": \"B605\",\n      \"test_name\": \"start_process_with_a_shell\"\n    },\n    {\n      \"code\": \"102 ensemble_dir=\\\"AltoTiberinaCatalog\\\"\\n103 os.system(f\\\"python3 search_catalog_for_best_fit_model.py {eq_time} TABOO_waveforms {ensemble_dir} \\\")\\n104 \\n\",\n      \"col_offset\": 0,\n      \"filename\": \"./detect_event.py\",\n      \"issue_confidence\": \"HIGH\",\n      \"issue_cwe\": {\n        \"id\": 78,\n        \"link\": \"https://cwe.mitre.org/data/definitions/78.html\"\n      },\n      \"issue_severity\": \"HIGH\",\n      \"issue_text\": \"Starting a process with a shell, possible injection detected, security issue.\",\n      \"line_number\": 103,\n      \"line_range\": [\n        103\n      ],\n      \"more_info\": \"https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html\",\n      \"test_id\": \"B605\",\n      \"test_name\": \"start_process_with_a_shell\"\n    }\n  ]\n}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/download_TABOO_waveforms.assess.sqaaas/job/main/1/execution/node/79/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/download_TABOO_waveforms.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "errors": [],
+                                "generated_at": "2025-10-09T11:40:49Z",
+                                "metrics": {
+                                    "./detect_event.py": {
+                                        "CONFIDENCE.HIGH": 4,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 4,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 46,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./download_TABOO_waveforms.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 54,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "_totals": {
+                                        "CONFIDENCE.HIGH": 4,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 4,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 100,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    }
+                                },
+                                "results": [
+                                    {
+                                        "code": "88 # delete folder content to only compare waveforms from the current earthquake\n89 os.system(f\"rm -f TABOO_waveforms/*.mseed\")\n90 os.system(f\"rm -f TABOO_waveforms/*.xml\")\n",
+                                        "col_offset": 0,
+                                        "filename": "./detect_event.py",
+                                        "issue_confidence": "HIGH",
+                                        "issue_cwe": {
+                                            "id": 78,
+                                            "link": "https://cwe.mitre.org/data/definitions/78.html"
+                                        },
+                                        "issue_severity": "HIGH",
+                                        "issue_text": "Starting a process with a shell, possible injection detected, security issue.",
+                                        "line_number": 89,
+                                        "line_range": [
+                                            89
+                                        ],
+                                        "more_info": "https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html",
+                                        "test_id": "B605",
+                                        "test_name": "start_process_with_a_shell"
+                                    },
+                                    {
+                                        "code": "89 os.system(f\"rm -f TABOO_waveforms/*.mseed\")\n90 os.system(f\"rm -f TABOO_waveforms/*.xml\")\n91 # call download_TABOO_waveforms.py with eq_time, output_folder and duration\n",
+                                        "col_offset": 0,
+                                        "filename": "./detect_event.py",
+                                        "issue_confidence": "HIGH",
+                                        "issue_cwe": {
+                                            "id": 78,
+                                            "link": "https://cwe.mitre.org/data/definitions/78.html"
+                                        },
+                                        "issue_severity": "HIGH",
+                                        "issue_text": "Starting a process with a shell, possible injection detected, security issue.",
+                                        "line_number": 90,
+                                        "line_range": [
+                                            90
+                                        ],
+                                        "more_info": "https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html",
+                                        "test_id": "B605",
+                                        "test_name": "start_process_with_a_shell"
+                                    },
+                                    {
+                                        "code": "91 # call download_TABOO_waveforms.py with eq_time, output_folder and duration\n92 os.system(f\"python3 download_TABOO_waveforms.py {eq_time} TABOO_waveforms 60 \")\n93 \n",
+                                        "col_offset": 0,
+                                        "filename": "./detect_event.py",
+                                        "issue_confidence": "HIGH",
+                                        "issue_cwe": {
+                                            "id": 78,
+                                            "link": "https://cwe.mitre.org/data/definitions/78.html"
+                                        },
+                                        "issue_severity": "HIGH",
+                                        "issue_text": "Starting a process with a shell, possible injection detected, security issue.",
+                                        "line_number": 92,
+                                        "line_range": [
+                                            92
+                                        ],
+                                        "more_info": "https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html",
+                                        "test_id": "B605",
+                                        "test_name": "start_process_with_a_shell"
+                                    },
+                                    {
+                                        "code": "102 ensemble_dir=\"AltoTiberinaCatalog\"\n103 os.system(f\"python3 search_catalog_for_best_fit_model.py {eq_time} TABOO_waveforms {ensemble_dir} \")\n104 \n",
+                                        "col_offset": 0,
+                                        "filename": "./detect_event.py",
+                                        "issue_confidence": "HIGH",
+                                        "issue_cwe": {
+                                            "id": 78,
+                                            "link": "https://cwe.mitre.org/data/definitions/78.html"
+                                        },
+                                        "issue_severity": "HIGH",
+                                        "issue_text": "Starting a process with a shell, possible injection detected, security issue.",
+                                        "line_number": 103,
+                                        "line_range": [
+                                            103
+                                        ],
+                                        "more_info": "https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html",
+                                        "test_id": "B605",
+                                        "test_name": "start_process_with_a_shell"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        },
         "QC.Sty": {
-            "valid": true,
+            "valid": false,
             "subcriteria": {
                 "QC.Sty01": {
                     "description": "Is the software product following a style standard for Python files?",
@@ -176,8 +583,8 @@
                     "hint": "Please check & solve the security weaknesses found by the linter tool",
                     "evidence": [
                         {
-                            "valid": true,
-                            "message": "Python files are compliant with flake8 (pycodestyle, pyflakes, mccabe) standard",
+                            "valid": false,
+                            "message": "Python files are not fully compliant with flake8 (pycodestyle, pyflakes, mccabe) standard",
                             "plugin": {
                                 "name": "report2sqaaas-plugin-flake8",
                                 "version": "2.1.0"
@@ -196,8 +603,8 @@
                                     "stdout_command": [
                                         "flake8 ."
                                     ],
-                                    "stdout_text": ".sqa/script.lovely-plum-devil.sh: cd: line 7: can't cd to github.com/marcmath/download_TABOO_waveforms/DTC74/WF7403/ST740304/src: No such file or directory",
-                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/download_TABOO_waveforms.assess.sqaaas/job/1.1.0/1/execution/node/88/log?consoleFull"
+                                    "stdout_text": "./download_TABOO_waveforms.py:14:80: E501 line too long (128 > 79 characters)\n./download_TABOO_waveforms.py:19:80: E501 line too long (129 > 79 characters)\n./download_TABOO_waveforms.py:36:32: E231 missing whitespace after ','\n./download_TABOO_waveforms.py:36:39: E231 missing whitespace after ','\n./download_TABOO_waveforms.py:40:80: E501 line too long (97 > 79 characters)\n./download_TABOO_waveforms.py:41:1: W293 blank line contains whitespace\n./download_TABOO_waveforms.py:42:29: E261 at least two spaces before inline comment\n./download_TABOO_waveforms.py:48:1: W293 blank line contains whitespace\n./download_TABOO_waveforms.py:49:69: W291 trailing whitespace\n./download_TABOO_waveforms.py:50:38: W291 trailing whitespace\n./download_TABOO_waveforms.py:51:34: W291 trailing whitespace\n./download_TABOO_waveforms.py:52:1: W293 blank line contains whitespace\n./download_TABOO_waveforms.py:60:80: E501 line too long (108 > 79 characters)\n./download_TABOO_waveforms.py:65:1: W293 blank line contains whitespace\n./download_TABOO_waveforms.py:72:80: E501 line too long (118 > 79 characters)\n./download_TABOO_waveforms.py:72:119: W291 trailing whitespace\n./download_TABOO_waveforms.py:73:79: E231 missing whitespace after ','\n./download_TABOO_waveforms.py:73:80: E501 line too long (101 > 79 characters)\n./download_TABOO_waveforms.py:73:102: W291 trailing whitespace\n./download_TABOO_waveforms.py:74:1: W293 blank line contains whitespace\n./download_TABOO_waveforms.py:76:51: W291 trailing whitespace\n./download_TABOO_waveforms.py:77:1: W293 blank line contains whitespace\n./download_TABOO_waveforms.py:79:80: E501 line too long (131 > 79 characters)\n./download_TABOO_waveforms.py:80:63: W291 trailing whitespace\n./download_TABOO_waveforms.py:82:1: W293 blank line contains whitespace\n./download_TABOO_waveforms.py:84:74: W291 trailing whitespace\n./download_TABOO_waveforms.py:85:1: W293 blank line contains whitespace\n./download_TABOO_waveforms.py:86:1: E305 expected 2 blank lines after class or function definition, found 1\n./download_TABOO_waveforms.py:86:33: E231 missing whitespace after ','\n./download_TABOO_waveforms.py:86:52: E231 missing whitespace after ','\n./detect_event.py:21:80: E501 line too long (83 > 79 characters)\n./detect_event.py:22:65: W291 trailing whitespace\n./detect_event.py:24:1: E265 block comment should start with '# '\n./detect_event.py:25:6: E225 missing whitespace around operator\n./detect_event.py:27:19: W291 trailing whitespace\n./detect_event.py:30:57: W291 trailing whitespace\n./detect_event.py:31:43: W291 trailing whitespace\n./detect_event.py:32:45: W291 trailing whitespace\n./detect_event.py:33:26: W291 trailing whitespace\n./detect_event.py:34:1: E265 block comment should start with '# '\n./detect_event.py:35:16: E225 missing whitespace around operator\n./detect_event.py:36:10: E225 missing whitespace around operator\n./detect_event.py:43:1: E265 block comment should start with '# '\n./detect_event.py:44:1: E265 block comment should start with '# '\n./detect_event.py:50:49: W291 trailing whitespace\n./detect_event.py:55:29: E265 block comment should start with '# '\n./detect_event.py:62:77: W291 trailing whitespace\n./detect_event.py:69:9: E701 multiple statements on one line (colon)\n./detect_event.py:69:21: W291 trailing whitespace\n./detect_event.py:70:11: E225 missing whitespace around operator\n./detect_event.py:72:11: W291 trailing whitespace\n./detect_event.py:74:13: E701 multiple statements on one line (colon)\n./detect_event.py:74:27: W291 trailing whitespace\n./detect_event.py:78:1: E303 too many blank lines (3)\n./detect_event.py:82:4: E225 missing whitespace around operator\n./detect_event.py:82:28: E261 at least two spaces before inline comment\n./detect_event.py:82:29: E262 inline comment should start with '# '\n./detect_event.py:83:8: E225 missing whitespace around operator\n./detect_event.py:83:80: E501 line too long (82 > 79 characters)\n./detect_event.py:85:80: E501 line too long (90 > 79 characters)\n./detect_event.py:86:14: E261 at least two spaces before inline comment\n./detect_event.py:89:11: F541 f-string is missing placeholders\n./detect_event.py:90:11: F541 f-string is missing placeholders\n./detect_event.py:96:1: E303 too many blank lines (3)\n./detect_event.py:100:80: E501 line too long (102 > 79 characters)\n./detect_event.py:102:13: E225 missing whitespace around operator\n./detect_event.py:103:80: E501 line too long (100 > 79 characters)\n./detect_event.py:108:1: W391 blank line at end of file",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/download_TABOO_waveforms.assess.sqaaas/job/main/1/execution/node/88/log?consoleFull"
                                 },
                                 "level": "REQUIRED",
                                 "build_repo": "https://github.com/eosc-synergy/download_TABOO_waveforms.assess.sqaaas"
@@ -207,16 +614,17 @@
                                 "version": "v4.0",
                                 "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
                             },
-                            "data_unstructured": ".sqa/script.lovely-plum-devil.sh: cd: line 7: can't cd to github.com/marcmath/download_TABOO_waveforms/DTC74/WF7403/ST740304/src: No such file or directory"
+                            "data_unstructured": "./download_TABOO_waveforms.py:14:80: E501 line too long (128 > 79 characters)\n./download_TABOO_waveforms.py:19:80: E501 line too long (129 > 79 characters)\n./download_TABOO_waveforms.py:36:32: E231 missing whitespace after ','\n./download_TABOO_waveforms.py:36:39: E231 missing whitespace after ','\n./download_TABOO_waveforms.py:40:80: E501 line too long (97 > 79 characters)\n./download_TABOO_waveforms.py:41:1: W293 blank line contains whitespace\n./download_TABOO_waveforms.py:42:29: E261 at least two spaces before inline comment\n./download_TABOO_waveforms.py:48:1: W293 blank line contains whitespace\n./download_TABOO_waveforms.py:49:69: W291 trailing whitespace\n./download_TABOO_waveforms.py:50:38: W291 trailing whitespace\n./download_TABOO_waveforms.py:51:34: W291 trailing whitespace\n./download_TABOO_waveforms.py:52:1: W293 blank line contains whitespace\n./download_TABOO_waveforms.py:60:80: E501 line too long (108 > 79 characters)\n./download_TABOO_waveforms.py:65:1: W293 blank line contains whitespace\n./download_TABOO_waveforms.py:72:80: E501 line too long (118 > 79 characters)\n./download_TABOO_waveforms.py:72:119: W291 trailing whitespace\n./download_TABOO_waveforms.py:73:79: E231 missing whitespace after ','\n./download_TABOO_waveforms.py:73:80: E501 line too long (101 > 79 characters)\n./download_TABOO_waveforms.py:73:102: W291 trailing whitespace\n./download_TABOO_waveforms.py:74:1: W293 blank line contains whitespace\n./download_TABOO_waveforms.py:76:51: W291 trailing whitespace\n./download_TABOO_waveforms.py:77:1: W293 blank line contains whitespace\n./download_TABOO_waveforms.py:79:80: E501 line too long (131 > 79 characters)\n./download_TABOO_waveforms.py:80:63: W291 trailing whitespace\n./download_TABOO_waveforms.py:82:1: W293 blank line contains whitespace\n./download_TABOO_waveforms.py:84:74: W291 trailing whitespace\n./download_TABOO_waveforms.py:85:1: W293 blank line contains whitespace\n./download_TABOO_waveforms.py:86:1: E305 expected 2 blank lines after class or function definition, found 1\n./download_TABOO_waveforms.py:86:33: E231 missing whitespace after ','\n./download_TABOO_waveforms.py:86:52: E231 missing whitespace after ','\n./detect_event.py:21:80: E501 line too long (83 > 79 characters)\n./detect_event.py:22:65: W291 trailing whitespace\n./detect_event.py:24:1: E265 block comment should start with '# '\n./detect_event.py:25:6: E225 missing whitespace around operator\n./detect_event.py:27:19: W291 trailing whitespace\n./detect_event.py:30:57: W291 trailing whitespace\n./detect_event.py:31:43: W291 trailing whitespace\n./detect_event.py:32:45: W291 trailing whitespace\n./detect_event.py:33:26: W291 trailing whitespace\n./detect_event.py:34:1: E265 block comment should start with '# '\n./detect_event.py:35:16: E225 missing whitespace around operator\n./detect_event.py:36:10: E225 missing whitespace around operator\n./detect_event.py:43:1: E265 block comment should start with '# '\n./detect_event.py:44:1: E265 block comment should start with '# '\n./detect_event.py:50:49: W291 trailing whitespace\n./detect_event.py:55:29: E265 block comment should start with '# '\n./detect_event.py:62:77: W291 trailing whitespace\n./detect_event.py:69:9: E701 multiple statements on one line (colon)\n./detect_event.py:69:21: W291 trailing whitespace\n./detect_event.py:70:11: E225 missing whitespace around operator\n./detect_event.py:72:11: W291 trailing whitespace\n./detect_event.py:74:13: E701 multiple statements on one line (colon)\n./detect_event.py:74:27: W291 trailing whitespace\n./detect_event.py:78:1: E303 too many blank lines (3)\n./detect_event.py:82:4: E225 missing whitespace around operator\n./detect_event.py:82:28: E261 at least two spaces before inline comment\n./detect_event.py:82:29: E262 inline comment should start with '# '\n./detect_event.py:83:8: E225 missing whitespace around operator\n./detect_event.py:83:80: E501 line too long (82 > 79 characters)\n./detect_event.py:85:80: E501 line too long (90 > 79 characters)\n./detect_event.py:86:14: E261 at least two spaces before inline comment\n./detect_event.py:89:11: F541 f-string is missing placeholders\n./detect_event.py:90:11: F541 f-string is missing placeholders\n./detect_event.py:96:1: E303 too many blank lines (3)\n./detect_event.py:100:80: E501 line too long (102 > 79 characters)\n./detect_event.py:102:13: E225 missing whitespace around operator\n./detect_event.py:103:80: E501 line too long (100 > 79 characters)\n./detect_event.py:108:1: W391 blank line at end of file"
                         }
                     ],
-                    "valid": true
+                    "valid": false,
+                    "required_for_next_level_badge": false
                 }
             },
             "coverage": {
-                "percentage": 100,
+                "percentage": 0,
                 "total_subcriteria": 1,
-                "success_subcriteria": 1
+                "success_subcriteria": 0
             }
         },
         "QC.Uni": {
@@ -229,29 +637,29 @@
                     "evidence": [
                         {
                             "valid": false,
-                            "message": "Test cases are not passing using bash testing framework",
+                            "message": "Test cases are not passing using None testing framework",
                             "plugin": {
                                 "name": "report2sqaaas-plugin-jenkins_exit_status",
                                 "version": "2.1.0"
                             },
                             "tool": {
-                                "name": "commands",
-                                "lang": "default",
-                                "version": "not-provided",
+                                "name": "pytest",
+                                "lang": "Python",
+                                "version": "7.1.3",
                                 "docker": {
-                                    "image": "eoscsynergy/sqaaas-micromamba:1.5.3-1",
-                                    "reviewed": "1970-01-01"
+                                    "image": "eoscsynergy/sqaaas-pytest:7.1.3-alpha",
+                                    "reviewed": "2023-08-09"
                                 },
                                 "ci": {
-                                    "name": "QC.Uni github.com/marcmath/download_TABOO_waveforms commands",
+                                    "name": "QC.Uni github.com/marcmath/download_TABOO_waveforms pytest",
                                     "status": "FAILED",
                                     "stdout_command": [
-                                        "echo 'Here we will execute COMPSs'"
+                                        "pytest  --json-report  --json-report-indent 4"
                                     ],
-                                    "stdout_text": ".sqa/script.flabby-thistle-dalmatian.sh: 7: cd: can't cd to github.com/marcmath/download_TABOO_waveforms/DTC74/WF7403/ST740304/src",
-                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/download_TABOO_waveforms.assess.sqaaas/job/1.1.0/1/execution/node/97/log?consoleFull"
+                                    "stdout_text": "============================= test session starts ==============================\nplatform linux -- Python 3.9.17, pytest-7.1.3, pluggy-1.2.0\nrootdir: /sqaaas-build/github.com/marcmath/download_TABOO_waveforms\nplugins: metadata-3.0.0, json-report-1.5.0\ncollected 0 items\n\n--------------------------------- JSON report ----------------------------------\nreport saved to: .report.json\n============================ no tests ran in 0.01s =============================",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/download_TABOO_waveforms.assess.sqaaas/job/main/1/execution/node/97/log?consoleFull"
                                 },
-                                "level": null,
+                                "level": "REQUIRED",
                                 "build_repo": "https://github.com/eosc-synergy/download_TABOO_waveforms.assess.sqaaas"
                             },
                             "standard": {
@@ -297,12 +705,12 @@
                                 },
                                 "ci": {
                                     "name": "QC.Ver github.com/marcmath/download_TABOO_waveforms get_git_tags.py",
-                                    "status": "FAILED",
+                                    "status": "SUCCESS",
                                     "stdout_command": [
                                         "get_git_tags.py"
                                     ],
-                                    "stdout_text": ".sqa/script.ugly-cerise-catfish.sh: 7: cd: can't cd to github.com/marcmath/download_TABOO_waveforms/DTC74/WF7403/ST740304/src",
-                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/download_TABOO_waveforms.assess.sqaaas/job/1.1.0/1/execution/node/106/log?consoleFull"
+                                    "stdout_text": "[]",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/download_TABOO_waveforms.assess.sqaaas/job/main/1/execution/node/106/log?consoleFull"
                                 },
                                 "level": "REQUIRED",
                                 "build_repo": "https://github.com/eosc-synergy/download_TABOO_waveforms.assess.sqaaas"
@@ -312,7 +720,7 @@
                                 "version": "v4.0",
                                 "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
                             },
-                            "data_unstructured": {}
+                            "data_unstructured": []
                         }
                     ],
                     "valid": false,
@@ -340,12 +748,12 @@
                                 },
                                 "ci": {
                                     "name": "QC.Ver github.com/marcmath/download_TABOO_waveforms get_git_tags.py",
-                                    "status": "FAILED",
+                                    "status": "SUCCESS",
                                     "stdout_command": [
                                         "get_git_tags.py"
                                     ],
-                                    "stdout_text": ".sqa/script.ugly-cerise-catfish.sh: 7: cd: can't cd to github.com/marcmath/download_TABOO_waveforms/DTC74/WF7403/ST740304/src",
-                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/download_TABOO_waveforms.assess.sqaaas/job/1.1.0/1/execution/node/106/log?consoleFull"
+                                    "stdout_text": "[]",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/download_TABOO_waveforms.assess.sqaaas/job/main/1/execution/node/106/log?consoleFull"
                                 },
                                 "level": "REQUIRED",
                                 "build_repo": "https://github.com/eosc-synergy/download_TABOO_waveforms.assess.sqaaas"
@@ -355,7 +763,7 @@
                                 "version": "v4.0",
                                 "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
                             },
-                            "data_unstructured": {}
+                            "data_unstructured": []
                         }
                     ],
                     "valid": false,
@@ -383,12 +791,12 @@
                                 },
                                 "ci": {
                                     "name": "QC.Ver github.com/marcmath/download_TABOO_waveforms get_git_tags.py",
-                                    "status": "FAILED",
+                                    "status": "SUCCESS",
                                     "stdout_command": [
                                         "get_git_tags.py"
                                     ],
-                                    "stdout_text": ".sqa/script.ugly-cerise-catfish.sh: 7: cd: can't cd to github.com/marcmath/download_TABOO_waveforms/DTC74/WF7403/ST740304/src",
-                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/download_TABOO_waveforms.assess.sqaaas/job/1.1.0/1/execution/node/106/log?consoleFull"
+                                    "stdout_text": "[]",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/download_TABOO_waveforms.assess.sqaaas/job/main/1/execution/node/106/log?consoleFull"
                                 },
                                 "level": "REQUIRED",
                                 "build_repo": "https://github.com/eosc-synergy/download_TABOO_waveforms.assess.sqaaas"
@@ -398,7 +806,7 @@
                                 "version": "v4.0",
                                 "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
                             },
-                            "data_unstructured": {}
+                            "data_unstructured": []
                         }
                     ],
                     "valid": true
@@ -431,86 +839,6 @@
                 "total_subcriteria": 1,
                 "success_subcriteria": 0
             }
-        },
-        "QC.Lic": {
-            "valid": false,
-            "subcriteria": {
-                "QC.Lic01": {
-                    "description": "Is code licensed to be freely used, modified and distributed by others?",
-                    "valid": false,
-                    "hint": "<p>Your source code repository shall be distributed under an open source license for this subcriterion to pass successfully. Be sure to have a license file present in the code repository matching the name <code>LICENSE</code> with optional extensions (depending on the format used): <code>[.md|.rst|.txt]</code>.</p><p>Valid licenses are any of those approved either by the <a href=\"https://opensource.org/licenses\" target=\"_blank\">Open Source Initiative</a> and/or the Free Software Foundation <a href=\"https://www.gnu.org/licenses/license-list.html\" target=\"_blank\"></a>. You can also check the <a href=\"https://choosealicense.com/\" target=\"_blank\">choosealicense.com</a> site</p>",
-                    "evidence": [
-                        {
-                            "valid": false,
-                            "message": "Error raised when validating tool <licensee> with validator plugin <licensee>: 'matched_files'"
-                        }
-                    ],
-                    "required_for_next_level_badge": true
-                },
-                "QC.Lic01.1": {
-                    "description": "Is LICENSE file placed in the root path of the code repository?",
-                    "valid": false,
-                    "hint": "Most social coding platforms require the license file to placed in the root path of the code repository, so it is a good practice to use this location by default. Allowed file names are <code>LICENSE</code>, <code>LICENSE.md</code>, <code>LICENSE.rst</code>, <code>LICENSE.txt</code>",
-                    "evidence": [
-                        {
-                            "valid": false,
-                            "message": "Error raised when validating tool <licensee> with validator plugin <licensee>: 'matched_files'"
-                        }
-                    ],
-                    "required_for_next_level_badge": true
-                },
-                "QC.Lic02": {
-                    "description": "Does the code use a license approved by Open Source Initiative?",
-                    "valid": false,
-                    "hint": "The <a href=\"https://opensource.org/\" target=\"_blank\">Open Source Initiative (OSI)</a> sets out the requirements for software to be legally declared as Open Source. The license in use shall be in the list of <a href=\"https://opensource.org/license-list.html\" target=\"_blank\">OSI-approved licenses</a> for this criterion to be successful",
-                    "evidence": [
-                        {
-                            "valid": false,
-                            "message": "Error raised when validating tool <licensee> with validator plugin <licensee>: 'matched_files'"
-                        }
-                    ],
-                    "required_for_next_level_badge": true
-                },
-                "QC.Lic02.1": {
-                    "description": "Does the code use an Open Source Initiative's popular-recognized license?",
-                    "valid": false,
-                    "hint": "The Open Source Initiative (OSI) sets out the requirements for software to be legally declared as Open Source. OSI provides a list of popular licenses that shall match most of the demands. The license in use shall be in the list of <a href=\"https://opensource.org/license-list.html\" target=\"_blank\">OSI popular licenses</a> for this criterion to be successful",
-                    "evidence": [
-                        {
-                            "valid": false,
-                            "message": "Error raised when validating tool <licensee> with validator plugin <licensee>: 'matched_files'"
-                        }
-                    ],
-                    "required_for_next_level_badge": true
-                }
-            },
-            "coverage": {
-                "percentage": 0,
-                "total_subcriteria": 4,
-                "success_subcriteria": 0
-            }
-        },
-        "QC.Sec": {
-            "valid": false,
-            "subcriteria": {
-                "QC.Sec02": {
-                    "description": "Is the source code passing Static Analysis Security Testing (SAST)?",
-                    "valid": false,
-                    "hint": "Please check & solve the security weaknesses found by the SAST tool",
-                    "evidence": [
-                        {
-                            "valid": false,
-                            "message": "Error raised when validating tool <bandit> with validator plugin <bandit>: 'results'"
-                        }
-                    ],
-                    "required_for_next_level_badge": false
-                }
-            },
-            "coverage": {
-                "percentage": 0,
-                "total_subcriteria": 1,
-                "success_subcriteria": 0
-            }
         }
     },
     "badge": {
@@ -518,9 +846,9 @@
             "criteria": {
                 "bronze": {
                     "to_fulfill": [
-                        "QC.Acc",
                         "QC.Lic",
-                        "QC.Doc"
+                        "QC.Doc",
+                        "QC.Acc"
                     ],
                     "missing": [
                         "QC.Lic",
@@ -532,17 +860,17 @@
                 },
                 "silver": {
                     "to_fulfill": [
-                        "QC.Acc",
-                        "QC.Lic",
-                        "QC.Met",
                         "QC.Ver",
-                        "QC.Doc"
+                        "QC.Lic",
+                        "QC.Doc",
+                        "QC.Acc",
+                        "QC.Met"
                     ],
                     "missing": [
-                        "QC.Met",
                         "QC.Ver",
                         "QC.Lic",
-                        "QC.Doc"
+                        "QC.Doc",
+                        "QC.Met"
                     ],
                     "fulfilled": [
                         "QC.Acc"
@@ -550,26 +878,26 @@
                 },
                 "gold": {
                     "to_fulfill": [
-                        "QC.Acc",
-                        "QC.Lic",
-                        "QC.Uni",
-                        "QC.Met",
-                        "QC.Ver",
                         "QC.Sty",
+                        "QC.Ver",
+                        "QC.Lic",
                         "QC.Sec",
-                        "QC.Doc"
+                        "QC.Doc",
+                        "QC.Acc",
+                        "QC.Met",
+                        "QC.Uni"
                     ],
                     "missing": [
-                        "QC.Lic",
-                        "QC.Uni",
                         "QC.Ver",
-                        "QC.Met",
+                        "QC.Lic",
                         "QC.Sec",
-                        "QC.Doc"
+                        "QC.Doc",
+                        "QC.Sty",
+                        "QC.Met",
+                        "QC.Uni"
                     ],
                     "fulfilled": [
-                        "QC.Acc",
-                        "QC.Sty"
+                        "QC.Acc"
                     ]
                 }
             },
