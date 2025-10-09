@@ -5,9 +5,8 @@ config:
       branch: main
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/marcmath/download_TABOO_waveforms:
-      branch: 1.1.0
+      branch: main
       repo: https://github.com/marcmath/download_TABOO_waveforms
-      subfolder: DTC74/WF7403/ST740304/src
 environment:
   JPL_DOCKERFORCEBUILD: enabled
   JPL_KEEPGOING: enabled
@@ -16,50 +15,50 @@ sqa_criteria:
     repos:
       github.com/marcmath/download_TABOO_waveforms git:
         commands:
-        - /usr/bin/env sh .sqa/script.shabby-asparagus-oyster.sh
-        container: qc.acc_crabby-mauve-binturong
+        - /usr/bin/env sh .sqa/script.lousy-bistre-rottweiler.sh
+        container: qc.acc_wheezy-sepia-bongo
   QC.Doc:
     repos:
       github.com/marcmath/download_TABOO_waveforms find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.wiggy-salmon-eel.sh
-        container: qc.doc_gimpy-violet-gar
+        - /usr/bin/env sh .sqa/script.woozy-mustard-earwig.sh
+        container: qc.doc_thirsty-auburn-toad
       github.com/marcmath/download_TABOO_waveforms git:
         commands:
-        - /usr/bin/env sh .sqa/script.baggy-mustard-coati.sh
-        container: qc.doc_snippy-grey-beagle
+        - /usr/bin/env sh .sqa/script.grumpy-emerald-seahorse.sh
+        container: qc.doc_muggy-wisteria-leopard
       github.com/marcmath/download_TABOO_waveforms markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.muggy-razzmatazz-gibbon.sh
-        container: qc.doc_flaky-coral-gecko
+        - /usr/bin/env sh .sqa/script.boozy-rust-beetle.sh
+        container: qc.doc_sleepy-aquamarine-chameleon
   QC.Lic:
     repos:
       github.com/marcmath/download_TABOO_waveforms licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.ready-cyan-squid.sh
-        container: qc.lic_pretty-grey-budgerigar
+        - /usr/bin/env sh .sqa/script.snazzy-rose-earwig.sh
+        container: qc.lic_craggy-scarlet-octopus
   QC.Sec:
     repos:
       github.com/marcmath/download_TABOO_waveforms bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.skimpy-sangria-monster.sh
-        container: qc.sec_wiggy-magenta-russel
+        - /usr/bin/env sh .sqa/script.clammy-orchid-armadillo.sh
+        container: qc.sec_flabby-cardinal-blue
   QC.Sty:
     repos:
       github.com/marcmath/download_TABOO_waveforms flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.lovely-plum-devil.sh
-        container: qc.sty_snoopy-white-impala
+        - /usr/bin/env sh .sqa/script.hasty-bistre-axolotl.sh
+        container: qc.sty_paltry-olive-kudu
   QC.Uni:
     repos:
-      github.com/marcmath/download_TABOO_waveforms commands:
+      github.com/marcmath/download_TABOO_waveforms pytest:
         commands:
-        - /usr/bin/env sh .sqa/script.flabby-thistle-dalmatian.sh
-        container: qc.uni_skinny-lilac-wolf
+        - /usr/bin/env sh .sqa/script.flabby-celadon-numbat.sh
+        container: qc.uni_woolly-salmon-chinook
   QC.Ver:
     repos:
       github.com/marcmath/download_TABOO_waveforms get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.ugly-cerise-catfish.sh
-        container: qc.ver_snazzy-lilac-iguana
+        - /usr/bin/env sh .sqa/script.crappy-apricot-gecko.sh
+        container: qc.ver_queasy-fuchsia-ladybird
 timeout: 5400
