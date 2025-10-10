@@ -15,50 +15,50 @@ sqa_criteria:
     repos:
       github.com/marcmath/download_TABOO_waveforms git:
         commands:
-        - /usr/bin/env sh .sqa/script.lousy-bistre-rottweiler.sh
-        container: qc.acc_wheezy-sepia-bongo
+        - /usr/bin/env sh .sqa/script.stuffy-lime-tapir.sh
+        container: qc.acc_sloppy-alizarin-zebra
   QC.Doc:
     repos:
       github.com/marcmath/download_TABOO_waveforms find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.woozy-mustard-earwig.sh
-        container: qc.doc_thirsty-auburn-toad
+        - /usr/bin/env sh .sqa/script.crabby-scarlet-rattlesnake.sh
+        container: qc.doc_lumpy-black-mist
       github.com/marcmath/download_TABOO_waveforms git:
         commands:
-        - /usr/bin/env sh .sqa/script.grumpy-emerald-seahorse.sh
-        container: qc.doc_muggy-wisteria-leopard
+        - /usr/bin/env sh .sqa/script.leaky-bistre-warthog.sh
+        container: qc.doc_seedy-asparagus-whale
       github.com/marcmath/download_TABOO_waveforms markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.boozy-rust-beetle.sh
-        container: qc.doc_sleepy-aquamarine-chameleon
+        - /usr/bin/env sh .sqa/script.slimy-chestnut-tarantula.sh
+        container: qc.doc_silly-aqua-horse
   QC.Lic:
     repos:
       github.com/marcmath/download_TABOO_waveforms licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.snazzy-rose-earwig.sh
-        container: qc.lic_craggy-scarlet-octopus
+        - /usr/bin/env sh .sqa/script.muggy-gamboge-tetra.sh
+        container: qc.lic_hasty-pear-burmese
   QC.Sec:
     repos:
       github.com/marcmath/download_TABOO_waveforms bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.clammy-orchid-armadillo.sh
-        container: qc.sec_flabby-cardinal-blue
+        - /usr/bin/env sh .sqa/script.lovely-green-pig.sh
+        container: qc.sec_stealthy-heliotrope-bombay
   QC.Sty:
     repos:
       github.com/marcmath/download_TABOO_waveforms flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.hasty-bistre-axolotl.sh
-        container: qc.sty_paltry-olive-kudu
+        - /usr/bin/env sh .sqa/script.scummy-carmine-cow.sh
+        container: qc.sty_pokey-chocolate-havanese
   QC.Uni:
     repos:
       github.com/marcmath/download_TABOO_waveforms pytest:
         commands:
-        - /usr/bin/env sh .sqa/script.flabby-celadon-numbat.sh
-        container: qc.uni_woolly-salmon-chinook
+        - /usr/bin/env sh .sqa/script.skinny-firebrick-stoat.sh
+        container: qc.uni_skanky-white-urchin
   QC.Ver:
     repos:
       github.com/marcmath/download_TABOO_waveforms get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.crappy-apricot-gecko.sh
-        container: qc.ver_queasy-fuchsia-ladybird
+        - /usr/bin/env sh .sqa/script.skimpy-amethyst-bison.sh
+        container: qc.ver_cozy-smalt-dhole
 timeout: 5400
